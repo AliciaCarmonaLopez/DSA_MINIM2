@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText passwordField;
     private Button loginButton;
 
+
      //SharedPreferences sharedPreferences;
 
     public int tiempo= 300;
@@ -62,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
 
         ProgressBar progressBar = findViewById(R.id.progressBar);
         progressBar.setVisibility(View.INVISIBLE);
-
+        Button botonRanking = findViewById(R.id.rankingBtn);
         TextView noAccountTextView = findViewById(R.id.noAccountTextView);
         String text = "No tienes una cuenta? Regístrate ahora!";
         SpannableString spannableString = new SpannableString(text);
@@ -132,7 +133,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
+        botonRanking.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, RankingActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
     }
@@ -205,6 +212,7 @@ public class MainActivity extends AppCompatActivity {
         }
         return false;
     }
+
 
 
 }
