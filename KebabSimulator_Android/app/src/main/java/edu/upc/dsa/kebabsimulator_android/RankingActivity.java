@@ -65,13 +65,13 @@ public class RankingActivity extends AppCompatActivity {
 
     private void doApiCall() {
         API apiService = API.retrofit.create(API.class);
-        Call<List<Weapon>> call = apiService.weapons();
+        Call<List<Ranking>> call = apiService.rankings();
 
-        call.enqueue(new Callback<List<Weapon>>() {
+        call.enqueue(new Callback<List<Ranking>>() {
             @Override
-            public void onResponse(Call<List<Weapon>> call, Response<List<Weapon>> response) {
+            public void onResponse(Call<List<Ranking>> call, Response<List<Ranking>> response) {
                 int code = response.code();
-                List<Weapon> weaponList = response.body();
+                List<Ranking> weaponList = response.body();
                 if (response.isSuccessful() && response.body() != null) {
                     adapter.setData(response.body());
                     adapter.notifyDataSetChanged();
@@ -82,7 +82,7 @@ public class RankingActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<List<Weapon>> call, Throwable t) {
+            public void onFailure(Call<List<Ranking>> call, Throwable t) {
                 Log.e(TAG, "Error in Retrofit: " + t.toString());
                 Toast.makeText(RankingActivity.this, "Network error: " + t.getMessage(), Toast.LENGTH_LONG).show();
             }

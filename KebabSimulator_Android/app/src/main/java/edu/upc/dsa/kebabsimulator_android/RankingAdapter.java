@@ -4,7 +4,6 @@ package edu.upc.dsa.kebabsimulator_android;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -17,7 +16,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import edu.upc.dsa.kebabsimulator_android.models.Ranking;
-import edu.upc.dsa.kebabsimulator_android.models.Weapon;
 
 
 public class RankingAdapter extends RecyclerView.Adapter<RankingAdapter.ViewHolder> {
@@ -90,8 +88,8 @@ public class RankingAdapter extends RecyclerView.Adapter<RankingAdapter.ViewHold
         Ranking w = values.get(position);
         final String name = w.getUserName();
         holder.txtUserName.setText(name);
-        holder.txtPoints.setText("Daño: " + w.getPoints());
-        Picasso.get().load(w.getImageUrl()).into(holder.imageView);
+        holder.txtPoints.setText("Points: " + w.getPoints());
+        Picasso.get().load(w.getUrl()).into(holder.imageView);
         /*holder.txtWeaponName.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -1,22 +1,22 @@
 package edu.upc.dsa.kebabsimulator_android.models;
 
 public class Ranking {
-    private String imageUrl;
+    private String url;
     private String userName;
     private int points;
     public Ranking(){}
-    public Ranking(String imageUrl, String userName, int points) {
-        this.imageUrl = imageUrl;
+    public Ranking(int points, String imageUrl, String userName) {
+        this.url = imageUrl;
         this.userName = userName;
         this.points = points;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
+    public String getUrl() {
+        return url;
     }
 
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public String getUserName() {

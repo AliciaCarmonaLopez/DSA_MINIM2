@@ -23,7 +23,8 @@ public interface API {
 
     @POST("users/newUser")
     Call<User> addUser(@Body User user);
-
+    @GET("stats/rankings")
+    Call<List<Ranking>> rankings();
 
     // Static initialization block to ensure Retrofit is set up correctly
     Retrofit retrofit = new Retrofit.Builder()
